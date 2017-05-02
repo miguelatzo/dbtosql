@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package etlg;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -132,10 +131,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         } else if (jComboBox1.getSelectedIndex() == 1) {
             try {
-                Process p = Runtime
-                        .getRuntime() //To run multiple commands they must be separated by '&&'
-                        .exec("cmd /c start cmd.exe /K \"cd.. && cd modulo_clinica && exe.bat \"");  //Write your commands after the '/K \"'
-            } catch (IOException e) {
+                new dbOpener().setVisible(true);
+            } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
