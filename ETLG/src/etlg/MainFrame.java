@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -119,14 +120,11 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-   
+  
         if (jComboBox1.getSelectedIndex() == 0) {
             try {
-                Process p = Runtime
-                        .getRuntime() //To run multiple commands they must be separated by '&&'
-                        .exec("cmd /c start cmd.exe /K \"cd.. && cd modulo_clinica && exe.bat \"");
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
+                new etlmc.mainF().setVisible(true);
+            } catch (ClassNotFoundException | SQLException e) {
                 e.printStackTrace();
             }
         } else if (jComboBox1.getSelectedIndex() == 1) {
